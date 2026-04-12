@@ -1,0 +1,230 @@
+/* ═══════════════════════════════════════════════════
+   Signup.module.css — TaskMan CTA Section
+   ═══════════════════════════════════════════════════ */
+
+.signup {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 24px;
+}
+
+/* ── Right shape — blue triangle SVG ──
+   Anchored to bottom-right corner
+*/
+.shapeRight {
+  position: absolute;
+  top: 0;      /* Top se chipka dein */
+  bottom: 0;   /* Bottom tak stretch karein */
+  right: 0;
+  width: 125px; /* Triangle ki width fix rakhein */
+  height: 100%; /* Section ki poori height lega */
+  line-height: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shapeRight svg {
+  display: block;
+  width: 100%;
+  height: 100%; /* Ye ab container ki poori height cover karega bina cut kiye */
+}
+
+/* ── Centre content ── */
+.content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+}
+
+/* ── Heading ── */
+.heading {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 800;
+  color: #12131a;
+  margin: 0 0 20px;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+/* ── Subtext ── */
+.subtext {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #6e7a88;
+  margin: 0 0 40px;
+}
+
+/* ── Input + button row ── */
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.emailInput {
+  border: 1.5px solid #dde3ec;
+  border-radius: 50px;
+  padding: 14px 24px;
+  font-size: 0.92rem;
+  color: #12131a;
+  background: #ffffff;
+  outline: none;
+  width: 280px;
+  font-family: inherit;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.2s ease;
+}
+
+.emailInput::placeholder {
+  color: #b2bcc8;
+}
+
+.emailInput:focus {
+  border-color: #2d5bff;
+}
+
+.emailInputError {
+  border-color: #b42318;
+  box-shadow: 0 0 0 2px rgba(180, 35, 24, 0.12);
+}
+
+.ctaButton {
+  background: #2d5bff;
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+  box-shadow: 0 6px 20px rgba(45, 91, 255, 0.4);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.ctaButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 28px rgba(45, 91, 255, 0.52);
+}
+
+.ctaButton:active {
+  transform: scale(0.97);
+}
+
+.ctaButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+.errorText {
+  margin-top: 16px;
+  color: #b42318;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.statusText {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.statusSuccess {
+  color: #1f7a3f;
+}
+
+.statusInfo {
+  color: #1d3c8c;
+}
+
+.statusError {
+  color: #b42318;
+}
+
+.couponBox {
+  margin-top: 18px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: #f4f7ff;
+  color: #1d3c8c;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.couponLabel {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7fd6;
+}
+
+.couponCode {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .signup {
+    min-height: 380px;
+    padding: 72px 24px;
+  }
+
+  .shapeLeft {
+    width: 200px;
+    height: 200px;
+    top: -40px;
+    left: -70px;
+  }
+
+  .shapeRight {
+    width: 120px;
+  }
+
+  .shapeRight svg {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inputRow {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .emailInput {
+    width: 100%;
+  }
+
+  .ctaButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 1.9rem;
+  }
+
+  .shapeRight {
+    opacity: 0.6;
+  }
+}

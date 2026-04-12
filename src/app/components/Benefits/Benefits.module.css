@@ -1,0 +1,105 @@
+/* ═══════════════════════════════════════════════════
+   Benefits.module.css — TaskMan
+   ═══════════════════════════════════════════════════ */
+
+.benefits {
+  width: 100%;
+  background: #ffffff;
+  padding: 100px clamp(28px, 7vw, 120px) 0;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Section heading ── */
+.heading {
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #12131a;
+  text-align: center;
+  letter-spacing: -0.03em;
+  margin: 0 0 72px;
+  max-width: 680px;
+}
+
+/* ── 3-column card grid ── */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 40px;
+  width: 100%;
+  max-width: 1060px;
+}
+
+/* ── Individual card ── */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* will-change set by GSAP */
+}
+
+/* ── Icon wrapper — no bg, just the SVG with its own shadow ── */
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  /* SVGs are 124×103, keep them at natural size */
+  width: 124px;
+  height: 103px;
+}
+
+.iconWrap svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Card title ── */
+.cardTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #12131a;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+/* ── Card description ── */
+.cardDesc {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: #8a96a3;
+  max-width: 260px;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 56px 0;
+  }
+
+  .card {
+    align-items: center;
+  }
+
+  .heading {
+    margin-bottom: 52px;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits {
+    padding: 72px 24px 80px;
+  }
+
+  .heading {
+    font-size: 1.7rem;
+  }
+}

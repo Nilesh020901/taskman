@@ -1,0 +1,151 @@
+/* ═══════════════════════════════════════════════════
+   Why.module.css — TaskMan "Why do you need" Section
+   ═══════════════════════════════════════════════════ */
+
+.why {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 40px 5%;
+}
+
+/* ══════════════════════════════════════════════════
+   LEFT PANEL — illustration + shapes
+══════════════════════════════════════════════════ */
+.leftPanel {
+  position: relative;
+  flex: 0 0 55%;
+  height: 700px; /* Thoda height bada diya taaki space mile */
+}
+
+/* ── Shapes layer ── */
+.shapesLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Yellow pill shape - Isko bada aur peeche kiya hai */
+.shapeRect {
+  position: absolute;
+  top: -13.6%;
+  left: -45%;
+  width: clamp(400px, 50vw, 650px);
+  z-index: 1; /* Dark ring ke peeche */
+  transform: rotate(70deg);
+}
+
+/* Dark circle ring - Adobe design me ye bahut bada hai */
+.shapeEllipse {
+  position: absolute;
+  top: 33.6%;
+  left: -60%; /* Aadha screen ke bahar rakha hai */
+  width: clamp(500px, 60vw, 700px);
+  z-index: 2; /* Yellow shape ke aage */
+}
+
+/* ── Illustration cards layer ── */
+.illusLayer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+/* Back Card (Rank) */
+.illus1 {
+  position: absolute;
+  top: 13%;
+  left: 2%;
+  width: 75%; /* Responsive pixel perfect width */
+  z-index: 3;
+  filter: drop-shadow(0 20px 40px rgba(31, 72, 93, 0.08));
+}
+
+/* Front Card (Top Earners) */
+.illus2 {
+  position: absolute;
+  top: 37.5%; /* Niche shift kiya overlap ke liye */
+  left: 22.5%;  /* Right me shift kiya */
+  width: 60%;
+  z-index: 4;
+  filter: drop-shadow(0 24px 48px rgba(31, 72, 93, 0.12));
+}
+
+/* ══════════════════════════════════════════════════
+   RIGHT PANEL — text content
+══════════════════════════════════════════════════ */
+.rightPanel {
+  flex: 0 0 45%;
+  max-width: 480px;
+  padding-left: 50px;
+  z-index: 10;
+}
+
+.tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #8097ff;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #12131a;
+  margin: 0 0 24px;
+}
+
+.body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6e7a88;
+  margin: 0 0 40px;
+}
+
+.learnMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #12131a;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: gap 0.2s ease;
+}
+
+.arrowIcon {
+  width: 24px;
+  transition: transform 0.2s ease;
+}
+
+.learnMore:hover { gap: 18px; }
+
+/* ══════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .why { flex-direction: column; padding: 80px 24px; height: auto; }
+  .leftPanel { width: 100%; height: 600px; }
+  .rightPanel { width: 100%; padding-left: 0; margin-top: 40px; }
+  .shapeEllipse { left: -150px; width: 600px; }
+  .illus1 { left: 5%; width: 60%; top: 40px; }
+  .illus2 { left: 45%; width: 45%; top: 250px; }
+}
+
+@media (max-width: 480px) {
+  .leftPanel { height: 450px; }
+  .shapeEllipse { left: -100px; width: 400px; }
+  .shapeRect { width: 300px; left: -50px; }
+  .illus1 { width: 80%; }
+  .illus2 { width: 60%; left: 30%; top: 200px; }
+  .heading { font-size: 1.8rem; }
+}
