@@ -38,3 +38,32 @@
   background: #12131a;
   color: #ffffff;
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    padding: 8px 20px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .ctaButton {
+    padding: 8px 16px;
+  }
+}

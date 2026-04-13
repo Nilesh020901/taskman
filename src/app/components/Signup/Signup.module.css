@@ -13,16 +13,13 @@
   padding: 80px 24px;
 }
 
-/* ── Right shape — blue triangle SVG ──
-   Anchored to bottom-right corner
-*/
 .shapeRight {
   position: absolute;
-  top: 0;      /* Top se chipka dein */
-  bottom: 0;   /* Bottom tak stretch karein */
+  top: 0;     
+  bottom: 0; 
   right: 0;
-  width: 125px; /* Triangle ki width fix rakhein */
-  height: 100%; /* Section ki poori height lega */
+  width: 125px;
+  height: 100%;
   line-height: 0;
   z-index: 1;
   pointer-events: none;
@@ -31,10 +28,9 @@
 .shapeRight svg {
   display: block;
   width: 100%;
-  height: 100%; /* Ye ab container ki poori height cover karega bina cut kiye */
+  height: 100%;
 }
 
-/* ── Centre content ── */
 .content {
   position: relative;
   z-index: 10;
@@ -45,7 +41,6 @@
   max-width: 600px;
 }
 
-/* ── Heading ── */
 .heading {
   font-size: clamp(2rem, 3.2vw, 2.8rem);
   font-weight: 800;
@@ -55,7 +50,6 @@
   line-height: 1.15;
 }
 
-/* ── Subtext ── */
 .subtext {
   font-size: 1rem;
   line-height: 1.7;
@@ -63,7 +57,6 @@
   margin: 0 0 40px;
 }
 
-/* ── Input + button row ── */
 .inputRow {
   display: flex;
   align-items: center;
@@ -165,6 +158,8 @@
   align-items: center;
   gap: 12px;
   font-weight: 700;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .couponLabel {
@@ -178,10 +173,6 @@
   font-size: 1rem;
   letter-spacing: 0.08em;
 }
-
-/* ══════════════════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════════════════ */
 
 @media (max-width: 768px) {
   .signup {
@@ -226,5 +217,11 @@
 
   .shapeRight {
     opacity: 0.6;
+  }
+}
+
+@media (max-width: 360px) {
+  .shapeRight {
+    width: 90px;
   }
 }

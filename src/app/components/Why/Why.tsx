@@ -25,11 +25,10 @@ const Why = () => {
         gsap.from(`.${styles.shapeEllipse}`, {
           x: -250, opacity: 0,
           duration: 1.4, ease: 'power3.out',
-          delay: 0.15, // Thoda delay taaki yellow shape pehle aaye
+          delay: 0.15,
           scrollTrigger: trigger
         });
 
-        // ── 2. Cards (Illustrations) Animation ──
         gsap.from(`.${styles.illus1}`, {
           y: 120, opacity: 0,
           duration: 1.2, ease: 'power3.out',
@@ -44,11 +43,10 @@ const Why = () => {
           scrollTrigger: trigger
         });
 
-        // ── 3. Text Content Animation ──
         gsap.from([`.${styles.tag}`, `.${styles.heading}`, `.${styles.body}`, `.${styles.learnMore}`], {
           y: 40, opacity: 0,
           duration: 0.8, ease: 'power2.out',
-          stagger: 0.12, // Ek ke baad ek text aayega
+          stagger: 0.12,
           delay: 0.6,
           scrollTrigger: trigger
         });
@@ -64,27 +62,21 @@ const Why = () => {
   return (
     <section className={styles.why} ref={sectionRef}>
 
-      {/* ── LEFT — illustration cluster ── */}
       <div className={styles.leftPanel}>
         
-        {/* Background shapes */}
         <div className={styles.shapesLayer}>
           <img src="/assets/4. Why/Why_Shapes_Rectangle.svg" alt="Yellow Pill Shape" className={styles.shapeRect} />
           <img src="/assets/4. Why/Why_Shapes_Ellipse.svg" alt="Dark Ring Shape" className={styles.shapeEllipse} />
         </div>
 
-        {/* Card illustrations */}
         <div className={styles.illusLayer}>
-          {/* Card 1 — Rank + Stats (Back Card) */}
           <img src="/assets/4. Why/Why_Illustration-1.svg" alt="Rank Card" className={styles.illus1} />
           
-          {/* Card 2 — Top Earners (Front Card) */}
           <img src="/assets/4. Why/Why_Illustration-2.svg" alt="Top Earners Card" className={styles.illus2} />
         </div>
 
       </div>
 
-      {/* ── RIGHT — Text content ── */}
       <div className={styles.rightPanel}>
         <h2 className={styles.heading}>
           Why do you need<br />task management<br />software?
